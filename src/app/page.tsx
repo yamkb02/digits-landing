@@ -9,10 +9,11 @@ import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
 import FloatingActionButton from '@/components/FloatingActionButton'
+import AIChatPopup from './components/AIChatPopup';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className='min-h-screen bg-white'>
       <Navbar />
       <HeroSection />
       <PainPointsSection />
@@ -24,6 +25,7 @@ export default function Home() {
       <CTASection />
       <Footer />
       <FloatingActionButton />
+      <AIChatPopup />
     </div>
-  )
+  );
 }
