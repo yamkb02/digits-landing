@@ -1,12 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import {
   fadeInUp,
-  fadeInLeft,
-  fadeInRight,
-  staggerContainer,
 } from "@/lib/hooks/useScrollAnimation";
 
 export default function CTASection() {
@@ -46,86 +42,7 @@ export default function CTASection() {
           </p>
         </AnimatedSection>
 
-        {/* CTA Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-        >
-          <motion.button
-            className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-white/20"
-            variants={fadeInLeft}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Free Trial
-          </motion.button>
-          <motion.button
-            className="border-2 border-white/80 text-white hover:bg-white/10 hover:border-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 backdrop-blur-sm"
-            variants={fadeInRight}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Schedule a Demo
-          </motion.button>
-        </motion.div>
 
-        {/* Trust Badges */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          variants={staggerContainer}
-        >
-          {[
-            {
-              icon: "⚡",
-              title: "Fast Onboarding",
-              subtitle: "Setup in days, not months",
-            },
-            {
-              icon: "🔒",
-              title: "Enterprise Security",
-              subtitle: "Bank-level encryption",
-            },
-            {
-              icon: "📞",
-              title: "24/7 Support",
-              subtitle: "Expert help when you need it",
-            },
-          ].map((badge, index) => (
-            <motion.div
-              key={index}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group"
-              variants={fadeInUp}
-              whileHover={{
-                y: -5,
-                transition: { duration: 0.3 },
-              }}
-            >
-              <motion.div
-                className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300"
-                whileHover={{ rotate: 5 }}
-              >
-                {badge.icon}
-              </motion.div>
-              <div className="text-white font-semibold text-lg mb-1">
-                {badge.title}
-              </div>
-              <div className="text-white/80 text-sm">{badge.subtitle}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

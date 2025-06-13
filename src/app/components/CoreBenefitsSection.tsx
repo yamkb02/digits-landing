@@ -184,20 +184,18 @@ export default function CoreBenefitsSection() {
               }}
             >
               <motion.button
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors"
-                variants={fadeInLeft}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Start Free Trial
-              </motion.button>
-              <motion.button
                 className="border-2 border-primary text-orange hover:bg-primary hover:text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors"
                 variants={fadeInRight}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                Schedule Demo
+                Contact Us
               </motion.button>
             </motion.div>
           </div>

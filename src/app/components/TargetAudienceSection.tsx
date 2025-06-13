@@ -9,6 +9,13 @@ import {
 } from "@/lib/hooks/useScrollAnimation";
 
 export default function TargetAudienceSection() {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   const personas = [
     {
       title: "Trading Companies",
@@ -136,6 +143,7 @@ export default function TargetAudienceSection() {
             Does your business fit one of these profiles?
           </p>
           <motion.button
+            onClick={scrollToContact}
             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

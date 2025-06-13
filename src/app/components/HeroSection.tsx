@@ -12,6 +12,13 @@ export default function HeroSection() {
     window.open('https://calendly.com/miguelrhatchitsolutions', '_blank', 'noopener,noreferrer')
   }
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <div
       id="home"
@@ -37,12 +44,18 @@ export default function HeroSection() {
         </AnimatedSection>
 
         <AnimatedSection animation={fadeInUp} delay={0.6}>
-          <div className="flex justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <button 
               onClick={openCalendly}
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Book a Demo
+            </button>
+            <button 
+              onClick={scrollToContact}
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Contact Us
             </button>
           </div>
         </AnimatedSection>

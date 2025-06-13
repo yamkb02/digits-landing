@@ -11,6 +11,13 @@ import {
 } from "@/lib/hooks/useScrollAnimation";
 
 export default function ComingSoonSection() {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   const futureFeatures = [
     {
       title: "Digi AI Assistant",
@@ -237,10 +244,10 @@ export default function ComingSoonSection() {
                 Join our early access program.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-white/20">
+                <button className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-white/20" onClick={scrollToContact}>
                   Join Early Access
                 </button>
-                <button className="border-2 border-white/80 text-white hover:bg-white/15 hover:border-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm">
+                <button className="border-2 border-white/80 text-white hover:bg-white/15 hover:border-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm" onClick={scrollToContact}>
                   Get Notified
                 </button>
               </div>
