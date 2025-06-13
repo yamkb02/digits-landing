@@ -219,13 +219,6 @@ export default function FeaturesSection() {
               data foundation. Changes in one area automatically update across
               all relevant modules.
             </p>
-            <motion.button
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore Integration Benefits
-            </motion.button>
           </div>
         </AnimatedSection>
       </div>
