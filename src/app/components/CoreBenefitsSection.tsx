@@ -86,7 +86,7 @@ export default function CoreBenefitsSection() {
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }} // Changed once to false
           variants={staggerContainer}
         >
           {benefits.map((benefit, index) => (
@@ -124,7 +124,7 @@ export default function CoreBenefitsSection() {
                 className="space-y-3"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: false }} // Changed once to false
                 variants={{
                   hidden: {},
                   visible: {
@@ -173,7 +173,7 @@ export default function CoreBenefitsSection() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false }} // Changed once to false
               variants={{
                 hidden: {},
                 visible: {

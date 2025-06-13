@@ -1,26 +1,7 @@
-import { useAnimation } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
+import { useAnimation, useInView, Variants } from "framer-motion";
 
-export const useScrollAnimation = (threshold: number = 0.1) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { 
-    amount: threshold,
-    once: true // Animation triggers only once
-  })
-  const controls = useAnimation()
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible')
-    }
-  }, [controls, isInView])
-
-  return { ref, controls, isInView }
-}
-
-// Animation variants
-export const fadeInUp = {
+export const fadeInUp: Variants = {
   hidden: {
     opacity: 0,
     y: 60,
@@ -29,21 +10,13 @@ export const fadeInUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
+      ease: "easeOut",
     },
   },
-}
+};
 
-export const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-}
-
-export const fadeInLeft = {
+export const fadeInLeft: Variants = {
   hidden: {
     opacity: 0,
     x: -60,
@@ -52,12 +25,13 @@ export const fadeInLeft = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
+      ease: "easeOut",
     },
   },
-}
+};
 
-export const fadeInRight = {
+export const fadeInRight: Variants = {
   hidden: {
     opacity: 0,
     x: 60,
@@ -66,12 +40,13 @@ export const fadeInRight = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
+      ease: "easeOut",
     },
   },
-}
+};
 
-export const scaleIn = {
+export const scaleIn: Variants = {
   hidden: {
     opacity: 0,
     scale: 0.8,
@@ -81,6 +56,36 @@ export const scaleIn = {
     scale: 1,
     transition: {
       duration: 0.6,
+      ease: "easeOut",
     },
   },
-} 
+};
+
+export const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export function useScrollAnimation(threshold: number = 0.1) {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, {
+    amount: threshold, // Changed from 'threshold' to 'amount'
+    // Remove the 'once' option to allow re-triggering
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      // Reset to hidden when out of view
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
+  return { ref, controls };
+}
