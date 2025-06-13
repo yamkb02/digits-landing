@@ -48,12 +48,12 @@ export default function Navbar() {
               >
                 About
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href='/contact'
                 className='text-black hover:text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors'
               >
                 Contact
-              </button>
+              </a>
             </div>
           </div>
 
@@ -106,12 +106,12 @@ export default function Navbar() {
               >
                 About
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href='/contact'
                 className='text-black hover:text-gray-700 hover:bg-gray-50 block px-3 py-3 text-base font-medium w-full text-left transition-colors rounded-md'
               >
                 Contact
-              </button>
+              </a>
             </div>
           </div>
         )}
