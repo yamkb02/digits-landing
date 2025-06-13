@@ -110,22 +110,23 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section id="features" className="w-full bg-white py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id='features' className='w-full bg-white py-20 px-4'>
+      <div className='max-w-7xl mx-auto'>
         {/* Section Header */}
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <AnimatedSection className='text-center mb-16'>
+          <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
             Modules & Features
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
             Complete ERP functionality designed for modern businesses. Every
+           
             module works together seamlessly.
           </p>
         </AnimatedSection>
 
         {/* Modules Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
@@ -133,8 +134,11 @@ export default function FeaturesSection() {
         >
           {modules.map((module, index) => (
             <motion.div
+             
               key={index}
-              className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+             
+              className='group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100'
+            
               variants={fadeInUp}
               whileHover={{
                 y: -8,
@@ -142,9 +146,13 @@ export default function FeaturesSection() {
               }}
             >
               <motion.div
+               
                 className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(
+                  
                   module.color
+                
                 )} rounded-xl flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+              
                 whileHover={{
                   scale: 1.2,
                   rotate: 5,
@@ -152,15 +160,22 @@ export default function FeaturesSection() {
                 }}
               >
                 {module.icon}
+              </div>
+
+              <h3 className='text-xl font-bold text-gray-900 mb-3'>
               </motion.div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {module.title}
               </h3>
 
+              <p className='text-gray-600 mb-6 leading-relaxed'>
+
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {module.description}
               </p>
+
+              <ul className='space-y-2'>
 
               <motion.ul
                 className="space-y-2"
@@ -180,7 +195,7 @@ export default function FeaturesSection() {
                 {module.features.map((feature, featureIndex) => (
                   <motion.li
                     key={featureIndex}
-                    className="flex items-center text-sm"
+                    className='flex items-center text-sm'
                     variants={{
                       hidden: { opacity: 0, x: -20 },
                       visible: {
@@ -191,12 +206,12 @@ export default function FeaturesSection() {
                     }}
                   >
                     <motion.div
-                      className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+                      className='w-4 h-4 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0'
                       whileHover={{ scale: 1.3 }}
                     >
-                      <span className="text-white text-xs">✓</span>
+                      <span className='text-white text-xs'>✓</span>
                     </motion.div>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className='text-gray-700'>{feature}</span>
                   </motion.li>
                 ))}
               </motion.ul>
@@ -208,19 +223,21 @@ export default function FeaturesSection() {
         <AnimatedSection
           animation={scaleIn}
           delay={0.3}
-          className="mt-16 text-center"
+          className='mt-16 text-center'
         >
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className='bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8'>
+            <h3 className='text-2xl font-bold text-gray-900 mb-4'>
               🔗 All Modules Work Together
             </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+            <p className='text-lg text-gray-600 max-w-3xl mx-auto mb-6'>
               Unlike disconnected systems, every Digits module shares the same
+             
               data foundation. Changes in one area automatically update across
+             
               all relevant modules.
             </p>
             <motion.button
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              className='bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -230,5 +247,5 @@ export default function FeaturesSection() {
         </AnimatedSection>
       </div>
     </section>
-  );
+  );;
 }

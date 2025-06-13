@@ -112,21 +112,41 @@ export default function PainPointsSection() {
           delay={0.3}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              There&apos;s a Better Way
-            </h3>
-            <p className="text-xl text-blue-100 mb-6">
-              Digits solves these problems with modern, integrated, and
-              intelligent ERP solutions.
-            </p>
-            <motion.button
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              See How Digits Helps
-            </motion.button>
+          <div className="relative bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl p-8 text-white shadow-2xl overflow-hidden">
+            {/* Multi-layer gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-red-500/20 via-transparent to-yellow-400/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-orange-600/30 to-red-600/20"></div>
+
+            {/* Animated background elements */}
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-yellow-400/40 to-orange-300/40 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-l from-red-400/30 to-orange-400/30 rounded-full blur-2xl animate-pulse delay-700"></div>
+            </div>
+
+            {/* Subtle noise texture overlay */}
+            <div
+              className="absolute inset-0 opacity-10 mix-blend-overlay"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              }}
+            ></div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
+                There&apos;s a Better Way
+              </h3>
+              <p className="text-xl text-white/95 mb-6 drop-shadow-md">
+                Digits solves these problems with modern, integrated, and
+                intelligent ERP solutions.
+              </p>
+              <motion.button
+                className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-white/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                See How Digits Helps
+              </motion.button>
+            </div>
           </div>
         </AnimatedSection>
       </div>
