@@ -121,20 +121,40 @@ export default function ComingSoonSection() {
 
         {/* Early Access CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-orange to-orange-500 rounded-2xl p-8 text-white shadow-2xl border border-orange-200">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              🚀 Get Early Access
-            </h3>
-            <p className="text-xl text-orange-100 mb-6 max-w-2xl mx-auto">
-              Be among the first to experience these revolutionary features. Join our early access program.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange hover:bg-orange-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Join Early Access
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-orange px-8 py-4 rounded-xl font-semibold transition-all duration-300">
-                Get Notified
-              </button>
+          <div className="relative rounded-2xl p-8 text-white shadow-2xl overflow-hidden">
+            {/* Multi-layer gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-red-500/20 via-transparent to-yellow-400/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-orange-600/30 to-red-600/20"></div>
+            
+            {/* Animated background elements */}
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-yellow-400/40 to-orange-300/40 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-l from-red-400/30 to-orange-400/30 rounded-full blur-2xl animate-pulse delay-700"></div>
+              <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-gradient-to-t from-orange-300/50 to-yellow-300/40 rounded-full blur-xl animate-pulse delay-300"></div>
+            </div>
+
+            {/* Subtle noise texture overlay */}
+            <div className="absolute inset-0 opacity-10 mix-blend-overlay"
+                 style={{
+                   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+                 }}></div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
+                🚀 Get Early Access
+              </h3>
+              <p className="text-xl text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
+                Be among the first to experience these revolutionary features. Join our early access program.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-white/20">
+                  Join Early Access
+                </button>
+                <button className="border-2 border-white/80 text-white hover:bg-white/15 hover:border-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm">
+                  Get Notified
+                </button>
+              </div>
             </div>
           </div>
         </div>

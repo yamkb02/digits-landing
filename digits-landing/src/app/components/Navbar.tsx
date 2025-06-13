@@ -23,7 +23,7 @@ export default function Navbar() {
             onClick={() => scrollToSection('home')}
             className="hover:opacity-80 transition-opacity"
           >
-            <Logo className="h-8 w-auto" />
+            <Logo className="h-12 w-auto" />
           </button>
         </div>
 
