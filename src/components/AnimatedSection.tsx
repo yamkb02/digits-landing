@@ -1,36 +1,42 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useScrollAnimation, fadeInUp } from '@/lib/hooks/useScrollAnimation'
-import { ReactNode } from 'react'
+import { motion, Variants } from "framer-motion";
+import { useScrollAnimation, fadeInUp } from "@/lib/hooks/useScrollAnimation";
+import { ReactNode } from "react";
 
 interface AnimatedSectionProps {
-  children: ReactNode
-  className?: string
-  animation?: any
-  threshold?: number
-  delay?: number
+  children: ReactNode;
+  className?: string;
+  animation?: Variants;
+  threshold?: number;
+  delay?: number;
 }
 
-export default function AnimatedSection({ 
-  children, 
-  className = '',
+export default function AnimatedSection({
+  children,
+  className = "",
   animation = fadeInUp,
   threshold = 0.1,
-  delay = 0
+  delay = 0,
 }: AnimatedSectionProps) {
-  const { ref, controls } = useScrollAnimation(threshold)
+  const { ref, controls } = useScrollAnimation(threshold);
 
-  const animationWithDelay = {
-    ...animation,
-    visible: {
-      ...animation.visible,
-      transition: {
-        ...animation.visible.transition,
-        delay,
-      },
-    },
-  }
+  const animationWithDelay =
+    delay > 0
+      ? {
+          ...animation,
+          visible: {
+            ...animation.visible,
+            transition: {
+              ...(typeof animation.visible === "object" &&
+              "transition" in animation.visible
+                ? animation.visible.transition
+                : {}),
+              delay,
+            },
+          },
+        }
+      : animation;
 
   return (
     <motion.div
@@ -42,5 +48,5 @@ export default function AnimatedSection({
     >
       {children}
     </motion.div>
-  )
-} 
+  );
+}
