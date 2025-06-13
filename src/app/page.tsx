@@ -6,6 +6,7 @@ import FeaturesSection from './components/FeaturesSection'
 import ComingSoonSection from './components/ComingSoonSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import CTASection from './components/CTASection'
+import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
 import FloatingActionButton from '@/components/FloatingActionButton'
@@ -22,6 +23,7 @@ export default function Home() {
       <ComingSoonSection />
       <TestimonialsSection />
       <CTASection />
+      <ContactSection />
       <Footer />
       <FloatingActionButton />
     </div>

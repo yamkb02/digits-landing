@@ -65,6 +65,12 @@ export default function Navbar() {
           >
             Success Stories
           </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+          >
+            Contact
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -115,6 +121,12 @@ export default function Navbar() {
               className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
             >
               Success Stories
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
+            >
+              Contact
             </button>
           </div>
         </div>

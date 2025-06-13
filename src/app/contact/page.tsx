@@ -31,21 +31,17 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Get in Touch
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Contact Us
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ready to transform your business with Digits ERP? We&apos;d love to hear from you. 
-              Send us a message and we&apos;ll get back to you within 24 hours.
+            <p className="text-lg text-gray-600">
+              Send us a message and we&apos;ll get back to you.
             </p>
           </div>
 
           {/* Contact Form */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Send us a Message
-              </h2>
+          <div className="max-w-md mx-auto">
+            <div className="bg-white rounded-lg p-6 shadow-sm border">
               <ContactForm />
             </div>
           </div>
