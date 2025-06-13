@@ -8,24 +8,24 @@ import CTASection from './components/CTASection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
-import FloatingActionButton from '@/components/FloatingActionButton'
-import AIChatPopup from './components/AIChatPopup';
+import MainLayout from './components/MainLayout'
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-white'>
-      <Navbar />
-      <HeroSection />
-      <PainPointsSection />
-      <TargetAudienceSection />
-      <CoreBenefitsSection />
-      <FeaturesSection />
-      <ComingSoonSection />
-      <CTASection />
-      <ContactSection />
-      <Footer />
-      <FloatingActionButton />
-      <AIChatPopup />
-    </div>
+    <MainLayout>
+      <div className='min-h-screen bg-white'>
+        <Navbar />
+        <HeroSection />
+        <PainPointsSection />
+        <TargetAudienceSection />
+        <CoreBenefitsSection />
+        <FeaturesSection />
+        <ComingSoonSection />
+        <CTASection />
+        <ContactSection />
+        <Footer />
+      </div>
+    </MainLayout>
   );
 }
+
