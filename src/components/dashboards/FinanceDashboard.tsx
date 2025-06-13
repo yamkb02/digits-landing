@@ -1,3 +1,11 @@
+import {
+  Bell,
+  Grid3x3,
+  Search,
+  ChevronDown,
+  Filter,
+  Download,
+} from "lucide-react";
 import DigitsLogo from "@/app/assets/logos/digits-logo.svg";
 import { Switch } from "@/components/ui/switch";
 
@@ -130,7 +138,7 @@ export default function FinanceDashboard() {
       <div className="flex items-center justify-between p-6 border-b border-gray-200">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <span className="text-xl">⚏</span>
+            <Grid3x3 className="w-6 h-6 text-gray-400" />
             <div className="flex items-center">
               <img src={DigitsLogo.src} alt="Digits ERP" className="h-8" />
             </div>
@@ -143,14 +151,14 @@ export default function FinanceDashboard() {
               <span>/</span>
               <span className="flex items-center space-x-1">
                 <span>Accounting</span>
-                <span className="text-xs">🔽</span>
+                <ChevronDown className="w-3 h-3" />
               </span>
             </span>
           </nav>
         </div>
         <div className="flex items-center space-x-4">
           <div className="relative">
-            <span className="text-xl">🔔</span>
+            <Bell className="w-6 h-6 text-gray-600" />
             <div className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
               <span className="text-white text-xs font-bold">65</span>
             </div>
@@ -183,7 +191,7 @@ export default function FinanceDashboard() {
               placeholder="Search payments..."
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             />
-            <span className="absolute left-3 top-2.5 text-gray-400">🔍</span>
+            <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
           </div>
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-2">
@@ -191,11 +199,11 @@ export default function FinanceDashboard() {
               <span className="text-gray-700">Select Mode</span>
             </div>
             <button className="flex items-center space-x-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-              <span>📊</span>
+              <Filter className="w-4 h-4" />
               <span>View</span>
             </button>
             <button className="flex items-center space-x-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-              <span>⬇️</span>
+              <Download className="w-4 h-4" />
               <span>Export</span>
             </button>
           </div>

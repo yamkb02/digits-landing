@@ -13,7 +13,7 @@ export default function PainPointsSection() {
     {
       title: "Outdated Systems Slow You Down",
       description:
-        "Legacy software crashes, requires constant maintenance, and can't keep up with modern business needs.",
+        "Outdated software crashes, requires constant maintenance, and can't keep up with modern business needs.",
       icon: "🐌",
     },
     {
@@ -31,7 +31,7 @@ export default function PainPointsSection() {
     {
       title: "Disconnected Systems",
       description:
-        "Multiple tools that don't talk to each other create data silos and inefficient workflows.",
+        "Using different apps that don't work together creates messy, disconnected information and makes your work harder.",
       icon: "🔗",
     },
     {
