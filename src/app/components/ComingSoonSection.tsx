@@ -80,7 +80,7 @@ export default function ComingSoonSection() {
             <div key={index} className="relative">
               {/* Connecting Line (hidden on mobile) */}
               {index < futureFeatures.length - 1 && (
-                <div className="hidden lg:block absolute top-20 left-full w-full h-0.5 bg-gradient-to-r from-orange/30 to-blue/30 z-0"></div>
+                <div className="hidden lg:block absolute top-20 left-full w-8 h-0.5 bg-gradient-to-r from-orange/30 to-blue/30 z-0"></div>
               )}
               
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 hover:bg-white hover:shadow-xl transition-all duration-300 relative z-10 group">

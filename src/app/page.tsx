@@ -8,6 +8,7 @@ import TestimonialsSection from './components/TestimonialsSection'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
+import FloatingActionButton from '@/components/FloatingActionButton'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <TestimonialsSection />
       <CTASection />
       <Footer />
+      <FloatingActionButton />
     </div>
   )
 }
