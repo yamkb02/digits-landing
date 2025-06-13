@@ -60,12 +60,6 @@ export default function Navbar() {
             Roadmap
           </button>
           <button
-            onClick={() => scrollToSection("testimonials")}
-            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-          >
-            Success Stories
-          </button>
-          <button
             onClick={() => scrollToSection("contact")}
             className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
           >
@@ -115,12 +109,6 @@ export default function Navbar() {
               className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
             >
               Roadmap
-            </button>
-            <button
-              onClick={() => scrollToSection("testimonials")}
-              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
-            >
-              Success Stories
             </button>
             <button
               onClick={() => scrollToSection("contact")}
