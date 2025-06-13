@@ -2,21 +2,24 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import { ArrowUp } from "lucide-react";
 
 export default function FloatingActionButton() {
   const [isVisible, setIsVisible] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Check if we've scrolled to the "about" section (Who It's For)
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      const sectionTop = aboutSection.offsetTop;
-      if (latest >= sectionTop - 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+    // Check if we've scrolled near the bottom of the page
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrolled = latest + windowHeight;
+
+    // Show button when user has scrolled 80% of the page
+    const threshold = documentHeight * 0.8;
+    if (scrolled >= threshold) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
     }
   });
 
@@ -31,7 +34,7 @@ export default function FloatingActionButton() {
 
   return (
     <motion.div
-      className="fixed bottom-6 right-6 z-40"
+      className="fixed bottom-6 right-24 z-40"
       initial={{ opacity: 0, scale: 0 }}
       animate={{
         opacity: isVisible ? 1 : 0,
@@ -46,7 +49,7 @@ export default function FloatingActionButton() {
         whileTap={{ scale: 0.9 }}
         title="Back to top"
       >
-        <span className="text-2xl">⬆️</span>
+        <ArrowUp className="w-6 h-6" />
       </motion.button>
     </motion.div>
   );
