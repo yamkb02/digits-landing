@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 
 export default function DashboardPreview() {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const node = elementRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -20,13 +20,13 @@ export default function DashboardPreview() {
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, []);
