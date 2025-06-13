@@ -23,7 +23,7 @@ export default function Navbar() {
             onClick={() => scrollToSection('home')}
             className="hover:opacity-80 transition-opacity cursor-pointer"
           >
-            <Logo className="h-8 w-auto" />
+            <Logo className="h-12 w-auto" />
           </button>
         </div>
 
@@ -64,19 +64,6 @@ export default function Navbar() {
             className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
           >
             Success Stories
-          </button>
-        </div>
-
-        {/* Auth Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
-          <button className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">
-            Log in
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg transition-colors cursor-pointer"
-          >
-            Get Started
           </button>
         </div>
 
@@ -145,17 +132,6 @@ export default function Navbar() {
             >
               Success Stories
             </button>
-            <div className="flex flex-col space-y-2 pt-4 border-t border-gray-100">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer">
-                Log in
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg transition-colors cursor-pointer"
-              >
-                Get Started
-              </button>
-            </div>
           </div>
         </div>
       )}

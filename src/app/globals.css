@@ -148,3 +148,35 @@
 .rotate-z-3 {
   transform: rotateZ(-3deg);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scrolling for webkit browsers */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar styling removed */
+
+/* Ensure smooth performance for animations */
+* {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}

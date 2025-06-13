@@ -34,7 +34,7 @@ export default function DashboardPreview() {
   return (
     <div
       ref={elementRef}
-      className='relative w-full max-w-5xl mx-auto px-4 py-12'
+      className='relative w-full max-w-5xl mx-auto px-4 py-12 overflow-hidden'
     >
       <div className='relative' style={{ perspective: '1200px' }}>
         <div
@@ -74,7 +74,7 @@ export default function DashboardPreview() {
             {/* Mock dashboard content */}
             <div className='space-y-6'>
               {/* Stats Cards */}
-              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
+              <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4'>
                 <div className='bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200'>
                   <div className='text-2xl font-bold text-blue-700'>12,540</div>
                   <div className='text-sm text-blue-600'>Active Users</div>
@@ -129,7 +129,7 @@ export default function DashboardPreview() {
                   </h4>
                 </div>
                 <div className='divide-y divide-gray-200'>
-                  <div className='grid grid-cols-4 gap-4 px-4 py-3 text-sm font-medium text-gray-700 bg-gray-50'>
+                  <div className='hidden sm:grid grid-cols-4 gap-4 px-4 py-3 text-sm font-medium text-gray-700 bg-gray-50'>
                     <div>Customer</div>
                     <div>Amount</div>
                     <div>Status</div>
@@ -155,22 +155,41 @@ export default function DashboardPreview() {
                       date: 'Dec 8',
                     },
                   ].map((item, i) => (
-                    <div
-                      key={i}
-                      className='grid grid-cols-4 gap-4 px-4 py-3 text-sm text-gray-600'
-                    >
-                      <div className='font-medium'>{item.name}</div>
-                      <div className='font-semibold'>{item.amount}</div>
-                      <div
-                        className={`inline-flex px-2 py-1 rounded-full text-xs font-medium ${
-                          item.status === 'Completed'
-                            ? 'bg-green-100 text-green-800'
-                            : 'bg-yellow-100 text-yellow-800'
-                        }`}
-                      >
-                        {item.status}
+                    <div key={i}>
+                      {/* Desktop table row */}
+                      <div className='hidden sm:grid grid-cols-4 gap-4 px-4 py-3 text-sm text-gray-600'>
+                        <div className='font-medium'>{item.name}</div>
+                        <div className='font-semibold'>{item.amount}</div>
+                        <div
+                          className={`inline-flex px-2 py-1 rounded-full text-xs font-medium ${
+                            item.status === 'Completed'
+                              ? 'bg-green-100 text-green-800'
+                              : 'bg-yellow-100 text-yellow-800'
+                          }`}
+                        >
+                          {item.status}
+                        </div>
+                        <div>{item.date}</div>
                       </div>
-                      <div>{item.date}</div>
+                      {/* Mobile card view */}
+                      <div className='sm:hidden px-4 py-3 space-y-2'>
+                        <div className='flex justify-between items-center'>
+                          <span className='font-medium text-gray-900'>{item.name}</span>
+                          <span className='font-semibold text-gray-700'>{item.amount}</span>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span
+                            className={`inline-flex px-2 py-1 rounded-full text-xs font-medium ${
+                              item.status === 'Completed'
+                                ? 'bg-green-100 text-green-800'
+                                : 'bg-yellow-100 text-yellow-800'
+                            }`}
+                          >
+                            {item.status}
+                          </span>
+                          <span className='text-sm text-gray-500'>{item.date}</span>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
