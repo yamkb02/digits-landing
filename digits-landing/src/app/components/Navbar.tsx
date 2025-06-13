@@ -21,59 +21,68 @@ export default function Navbar() {
         <div className="flex items-center">
           <button
             onClick={() => scrollToSection('home')}
-            className="hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity cursor-pointer"
           >
-            <Logo className="h-12 w-auto" />
+            <Logo className="h-8 w-auto" />
           </button>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <button
+            onClick={() => scrollToSection('why-digits')}
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+          >
+            Why Digits?
+          </button>
+          <button
+            onClick={() => scrollToSection('about')}
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+          >
+            Who It&apos;s For
+          </button>
+          <button
+            onClick={() => scrollToSection('pricing')}
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+          >
+            Benefits
+          </button>
+          <button
             onClick={() => scrollToSection('features')}
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
           >
             Features
           </button>
           <button
-            onClick={() => scrollToSection('pricing')}
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            onClick={() => scrollToSection('roadmap')}
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
           >
-            Pricing
+            Roadmap
           </button>
           <button
-            onClick={() => scrollToSection('about')}
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            onClick={() => scrollToSection('testimonials')}
+            className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
           >
-            About
+            Success Stories
           </button>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Contact
-          </button>
-          <a href="#docs" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Docs
-          </a>
-          <a href="#blog" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Blog
-          </a>
         </div>
 
         {/* Auth Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="text-gray-600 hover:text-gray-900 transition-colors">
+          <button className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">
             Log in
           </button>
-          <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg transition-colors">
-            Start Free Trial
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg transition-colors cursor-pointer"
+          >
+            Get Started
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden flex items-center justify-center p-2"
+          className="md:hidden flex items-center justify-center p-2 cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
@@ -101,41 +110,50 @@ export default function Navbar() {
         <div className="md:hidden mt-4 pb-4 border-t border-gray-100 bg-white/95 backdrop-blur-sm">
           <div className="flex flex-col space-y-4 pt-4">
             <button
+              onClick={() => scrollToSection('why-digits')}
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
+            >
+              Why Digits?
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
+            >
+              Who It&apos;s For
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
+            >
+              Benefits
+            </button>
+            <button
               onClick={() => scrollToSection('features')}
-              className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
             >
               Features
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
-              className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+              onClick={() => scrollToSection('roadmap')}
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
             >
-              Pricing
+              Roadmap
             </button>
             <button
-              onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+              onClick={() => scrollToSection('testimonials')}
+              className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer"
             >
-              About
+              Success Stories
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-gray-600 hover:text-gray-900 transition-colors text-left"
-            >
-              Contact
-            </button>
-            <a href="#docs" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Docs
-            </a>
-            <a href="#blog" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Blog
-            </a>
             <div className="flex flex-col space-y-2 pt-4 border-t border-gray-100">
-              <button className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+              <button className="text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer">
                 Log in
               </button>
-              <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg transition-colors">
-                Start Free Trial
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg transition-colors cursor-pointer"
+              >
+                Get Started
               </button>
             </div>
           </div>

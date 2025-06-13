@@ -55,7 +55,7 @@ export default function ComingSoonSection() {
   }
 
   return (
-    <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 px-4 relative overflow-hidden">
+    <section id="roadmap" className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 px-4 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange/5 to-blue/5"></div>
       <div className="absolute inset-0">
