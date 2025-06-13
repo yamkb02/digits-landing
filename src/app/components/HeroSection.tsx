@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import DashboardPreview from '../../components/dashboard-preview'
+import BusinessAreasSlider from '@/components/BusinessAreasSlider'
 import AnimatedSection from '@/components/AnimatedSection'
 import ParallaxWrapper from '@/components/ParallaxWrapper'
 import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from '@/lib/hooks/useScrollAnimation'
@@ -59,10 +59,10 @@ export default function HeroSection() {
           </motion.button>
         </motion.div>
 
-        {/* Dashboard Preview with Parallax */}
+        {/* Business Areas Slider */}
         <AnimatedSection animation={scaleIn} delay={0.8}>
           <ParallaxWrapper offset={30}>
-            <DashboardPreview />
+            <BusinessAreasSlider />
           </ParallaxWrapper>
         </AnimatedSection>
       </div>
