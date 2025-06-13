@@ -40,7 +40,7 @@ export default function ComingSoonSection() {
       icon: "🔄",
       features: [
         "Automated data mapping",
-        "Legacy system connectors",
+        "Outdated system connectors",
         "Data validation & cleanup",
         "Zero-downtime migration",
       ],
