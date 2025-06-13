@@ -36,7 +36,7 @@ export default function CoreBenefitsSection() {
   ]
 
   return (
-    <section className="w-full bg-gradient-to-br from-orange-50 to-orange-100 py-20 px-4">
+    <section id="pricing" className="w-full bg-gradient-to-br from-orange-50 to-orange-100 py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

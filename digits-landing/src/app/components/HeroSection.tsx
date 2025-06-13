@@ -1,6 +1,8 @@
+import DashboardPreview from '../../components/dashboard-preview'
+
 export default function HeroSection() {
   return (
-    <div className="w-full bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 px-4 relative overflow-hidden">
+    <div id="home" className="w-full bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 px-4 relative overflow-hidden mt-16">
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0 bg-gradient-to-r from-orange/10 to-orange/5"></div>
       </div>
@@ -24,36 +26,8 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500">
-          <div className="bg-gradient-to-r from-orange to-orange rounded-lg p-6 text-white">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold">Digits Dashboard</h3>
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 bg-white rounded-full opacity-50"></div>
-                <div className="w-3 h-3 bg-white rounded-full opacity-75"></div>
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div className="bg-white bg-opacity-20 rounded-lg p-3">
-                <div className="text-2xl mb-1">📦</div>
-                <div className="text-sm">Procurement</div>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-3">
-                <div className="text-2xl mb-1">📊</div>
-                <div className="text-sm">Inventory</div>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-3">
-                <div className="text-2xl mb-1">💰</div>
-                <div className="text-sm">Sales</div>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-3">
-                <div className="text-2xl mb-1">📈</div>
-                <div className="text-sm">Analytics</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Dashboard Preview */}
+        <DashboardPreview />
       </div>
     </div>
   )

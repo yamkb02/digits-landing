@@ -1,6 +1,6 @@
 export default function CTASection() {
   return (
-    <section className="w-full bg-gradient-to-r from-primary to-orange py-20 px-4">
+    <section id="contact" className="w-full bg-gradient-to-r from-primary to-orange py-20 px-4">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Take Control of Your Business Today

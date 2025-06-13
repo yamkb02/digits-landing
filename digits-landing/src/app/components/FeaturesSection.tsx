@@ -61,29 +61,36 @@ export default function FeaturesSection() {
       ]
     },
     {
-      title: "Analytics & Reporting",
-      description: "Powerful business intelligence with customizable dashboards and reports.",
-      icon: "📈",
+      title: "Project Management",
+      description: "Complete project lifecycle management with resource allocation and tracking.",
+      icon: "📋",
       color: "indigo",
       features: [
-        "Real-time dashboards",
-        "Custom reports",
-        "KPI tracking",
-        "Predictive analytics"
+        "Task management",
+        "Resource planning",
+        "Time tracking",
+        "Milestone tracking"
       ]
     }
   ]
 
   const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: "from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700",
-      green: "from-green-500 to-green-600 hover:from-green-600 hover:to-green-700",
-      purple: "from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700",
-      orange: "from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700",
-      red: "from-red-500 to-red-600 hover:from-red-600 hover:to-red-700",
-      indigo: "from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700"
+    switch (color) {
+      case 'blue':
+        return 'from-blue-500 to-blue-600'
+      case 'green':
+        return 'from-green-500 to-green-600'
+      case 'purple':
+        return 'from-purple-500 to-purple-600'
+      case 'orange':
+        return 'from-orange-500 to-orange-600'
+      case 'red':
+        return 'from-red-500 to-red-600'
+      case 'indigo':
+        return 'from-indigo-500 to-indigo-600'
+      default:
+        return 'from-gray-500 to-gray-600'
     }
-    return colorMap[color as keyof typeof colorMap] || colorMap.blue
   }
 
   return (
