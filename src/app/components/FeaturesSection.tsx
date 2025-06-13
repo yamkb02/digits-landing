@@ -76,16 +76,16 @@ export default function FeaturesSection() {
       ],
     },
     {
-      title: "Project Management",
+      title: "Warehouse & Logistics",
       description:
-        "Complete project lifecycle management with resource allocation and tracking.",
-      icon: "📋",
+        "Streamline receiving, transfers, and deliveries with real-time tracking and automated workflows.",
+      icon: "🚛",
       color: "indigo",
       features: [
-        "Task management",
-        "Resource planning",
-        "Time tracking",
-        "Milestone tracking",
+        "Warehouse receiving",
+        "Branch transfers",
+        "Delivery management",
+        "Location tracking",
       ],
     },
   ];

@@ -5,6 +5,7 @@ import ProcurementDashboard from "./dashboards/ProcurementDashboard";
 import SalesDashboard from "./dashboards/SalesDashboard";
 import InventoryDashboard from "./dashboards/InventoryDashboard";
 import FinanceDashboard from "./dashboards/FinanceDashboard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const sliderData = [
   {
@@ -102,12 +103,12 @@ export default function BusinessAreasSlider() {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {sliderData.map((slide) => {
-            const DashboardComponent = slide.component;
-            return (
-              <div key={slide.id} className="w-full flex-shrink-0">
-                <DashboardComponent />
-              </div>
-            );
+        const DashboardComponent = slide.component;
+        return (
+          <div key={slide.id} className="w-full flex-shrink-0">
+            <DashboardComponent />
+          </div>
+        );
           })}
         </div>
 
@@ -115,14 +116,16 @@ export default function BusinessAreasSlider() {
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full p-3 shadow-lg transition-all duration-200 z-10"
+          aria-label="Previous Slide"
         >
-          <span className="text-xl">◀</span>
+          <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={nextSlide}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-600 hover:text-gray-900 rounded-full p-3 shadow-lg transition-all duration-200 z-10"
+          aria-label="Next Slide"
         >
-          <span className="text-xl">▶</span>
+          <ChevronRight className="w-6 h-6" />
         </button>
       </div>
 
