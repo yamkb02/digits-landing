@@ -18,9 +18,8 @@ export default function CoreBenefitsSection() {
         "Get your team up and running in days, not months. Our intuitive interface and guided setup process ensures quick adoption across your organization.",
       icon: "⚡",
       features: [
-        "Quick setup wizard",
-        "Pre-configured templates",
-        "24/7 onboarding support",
+        "Ready in days",
+        "Onboarding support",
         "Team training included",
       ],
     },
@@ -30,10 +29,9 @@ export default function CoreBenefitsSection() {
         "Built with compliance in mind. Digits adheres to international standards and regulations, keeping your business audit-ready at all times.",
       icon: "🏆",
       features: [
-        "ISO 27001 compliant",
-        "GDPR ready",
-        "SOX compliance",
-        "Industry certifications",
+        "Data protection regulations",
+        "Financial reporting requirements",
+        "Industry best practices",
       ],
     },
     {
@@ -189,9 +187,9 @@ export default function CoreBenefitsSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  const contactSection = document.getElementById('contact');
+                  const contactSection = document.getElementById("contact");
                   if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    contactSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
               >
