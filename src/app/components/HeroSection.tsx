@@ -1,17 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
 import BusinessAreasSlider from "@/components/BusinessAreasSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import ParallaxWrapper from "@/components/ParallaxWrapper";
 import {
   fadeInUp,
-  fadeInLeft,
-  fadeInRight,
-  scaleIn,
 } from "@/lib/hooks/useScrollAnimation";
 
 export default function HeroSection() {
+  const openCalendly = () => {
+    window.open('https://calendly.com/miguelrhatchitsolutions', '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <div
       id="home"
@@ -36,41 +36,19 @@ export default function HeroSection() {
           </p>
         </AnimatedSection>
 
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-          initial="hidden"
-          whileInView="visible" // Changed from animate to whileInView
-          viewport={{ once: false }} // Allow re-animation
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.6,
-              },
-            },
-          }}
-        >
-          <motion.button
-            variants={fadeInLeft}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started Free
-          </motion.button>
-          <motion.button
-            variants={fadeInRight}
-            className="border-2 border-primary text-orange hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Book a Demo
-          </motion.button>
-        </motion.div>
+        <AnimatedSection animation={fadeInUp} delay={0.6}>
+          <div className="flex justify-center mb-16">
+            <button 
+              onClick={openCalendly}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Book a Demo
+            </button>
+          </div>
+        </AnimatedSection>
 
         {/* Business Areas Slider */}
-        <AnimatedSection animation={scaleIn} delay={0.8}>
+        <AnimatedSection animation={fadeInUp} delay={0.8}>
           <ParallaxWrapper offset={30}>
             <BusinessAreasSlider />
           </ParallaxWrapper>
