@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,4 +119,28 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.rotateX-0 {
+  transform: rotateX(0deg);
+}
+
+.rotateX-75 {
+  transform: rotateX(75deg);
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom rotation utilities */
+.rotate-x-12 {
+  transform: rotateX(12deg);
+}
+
+.rotate-y-6 {
+  transform: rotateY(6deg);
+}
+
+.rotate-z-3 {
+  transform: rotateZ(-3deg);
 }
